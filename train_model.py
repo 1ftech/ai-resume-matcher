@@ -5,9 +5,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 import joblib
 from parser.preprocess import clean_text
+from parser.load_data import load_resume_data
 
 # Load and clean data
-df = pd.read_csv("data/resume.csv")
+df = load_resume_data("data/Resume.csv") # Use load_resume_data and correct filename case
 df['cleaned_resume'] = df['Resume_str'].apply(clean_text)
 
 # Feature extraction
